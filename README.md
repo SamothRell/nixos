@@ -6,6 +6,10 @@
 `rm main.tar.gz`\
 `mv nixos-main/ nixos`
 
-### Installation et configuration de home-manager
+### Installation de home-manager
 `sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager`\
 `sudo nix-channel --update`
+
+### Suppression des fichiers du répertoire /etc/nixos et création des liens symboliques
+`sudo rm /etc/nixos/*.nix`\
+`sudo ln -s ~/nixos /etc/nixos`
