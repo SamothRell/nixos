@@ -10,6 +10,6 @@
 `sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager`\
 `sudo nix-channel --update`
 
-### Suppression des fichiers du répertoire /etc/nixos et création des liens symboliques
-`sudo rm /etc/nixos/*.nix`\
+### Suppression du répertoire /etc/nixos et création du lien symbolique
+`sudo rm -r /etc/nixos`\
 `sudo ln -s ~/nixos /etc/nixos`
