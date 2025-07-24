@@ -11,7 +11,14 @@
 `sudo nix-channel --update`
 
 ### Suppression du répertoire /etc/nixos et création du lien symbolique
-`sudo cp /etc/nixos/hardware-configuration.nix ~/nixos`\
+`cat >> /etc/nixos/configuration.nix << EOL
+home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.thomas = import ./home.nix;
+  };
+EOL `\
+`sudo cp /etc/nixos/*.nix ~/nixos`\
 `sudo chown -R 1000:100 ~/nixos`\
 `sudo rm -r /etc/nixos`\
 `sudo ln -s ~/nixos /etc/nixos`
