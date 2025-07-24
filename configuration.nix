@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./thomas.nix
+      ./samothrell.nix
       <home-manager/nixos>
     ];
 
@@ -83,9 +83,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.thomas = {
+  users.users.samothrell = {
     isNormalUser = true;
-    description = "Thomas M";
+    description = "SamothRell";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -96,7 +96,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.thomas = import ./home.nix;
+    users.samothrell = import ./home.nix;
   };
 
   # Install firefox.
